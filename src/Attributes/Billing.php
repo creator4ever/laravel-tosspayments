@@ -94,7 +94,18 @@ class Billing extends TossPayments implements AttributeInterface
 
         return $this->url.$this->start($endpoint);
     }
+    
+    /**
+     * @param  string  $authKey
+     * @return $this
+     */
+    public function authKey(string $authKey): static
+    {
+        $this->authKey = $authKey;
 
+        return $this;
+    }
+    
     /**
      * @param  string  $customerKey
      * @return $this
